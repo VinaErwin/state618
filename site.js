@@ -64,7 +64,7 @@ function setSubmitMessage(text, type = '') {
   button.disabled = false;
   button.textContent = 'Check status';
 
-  button.addEventListener('click', () => {
+  button.addEventListener('click', async () => {
     const playerId = input.value.trim();
     if (!playerId) {
       renderStatusError('請先輸入 Player ID。');
@@ -74,31 +74,25 @@ function setSubmitMessage(text, type = '') {
     button.disabled = true;
     button.textContent = 'Checking...';
 
-    const callbackName = '__state618StatusCallback';
-    const oldScript = document.getElementById('status-jsonp');
-    if (oldScript) oldScript.remove();
+    try {
+      const response = await fetch(
+        WEB_APP_URL + '?playerId=' + encodeURIComponent(playerId) + '&_=' + Date.now(),
+        { method: 'GET', cache: 'no-store' }
+      );
 
-    window[callbackName] = (data) => {
-      button.disabled = false;
-      button.textContent = 'Check status';
+      if (!response.ok) {
+        throw new Error('HTTP ' + response.status);
+      }
+
+      const data = await response.json();
       renderStatus(data);
-      delete window[callbackName];
-      const script = document.getElementById('status-jsonp');
-      if (script) script.remove();
-    };
-
-    const script = document.createElement('script');
-    script.id = 'status-jsonp';
-    script.src = WEB_APP_URL
-      + '?playerId=' + encodeURIComponent(playerId)
-      + '&callback=' + callbackName
-      + '&_=' + Date.now();
-    script.onerror = () => {
+    } catch (error) {
+      console.error('Status lookup failed:', error);
+      renderStatusError('查詢連線失敗，請重新整理頁面後再試。');
+    } finally {
       button.disabled = false;
       button.textContent = 'Check status';
-      renderStatusError('目前無法查詢，請稍後再試。');
-    };
-    document.body.appendChild(script);
+    }
   });
 
   function renderStatus(data) {
