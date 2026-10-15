@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211522">
+  <title>STATE 618 | Migration Interest Survey</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="form.css">
+</head>
+<body class="form-page">
+  <header class="form-topbar">
+    <a class="back-link" href="index.html">← STATE 618</a>
+    <div class="form-status"><span class="status-dot"></span> Draft survey</div>
+  </header>
+
+  <main class="form-shell">
+    <section class="form-intro">
+      <div class="section-kicker">STATE 618 · MIGRATION</div>
+      <h1>Migration Interest Survey</h1>
+      <p class="zh-title">移民意願調查</p>
+      <p class="intro">
+        This is a draft preview of the survey. Your answers will not be submitted yet.
+      </p>
+      <p class="intro zh">這是目前的表單預覽版，尚未正式送出資料。</p>
+    </section>
+
+    <form id="survey-form" class="survey-form">
+      <fieldset>
+        <legend><span>01</span> 基本資料 / Basic Information</legend>
+
+        <label>遊戲名稱 / Player Name <b>*</b>
+          <input type="text" name="player_name" required>
+        </label>
+
+        <label>Player ID <b>*</b>
+          <input type="text" name="player_id" required>
+        </label>
+
+        <label>目前州 / Current State <b>*</b>
+          <input type="number" name="current_state" min="1" required>
+        </label>
+
+        <label>目前聯盟 / Current Alliance
+          <input type="text" name="current_alliance">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>02</span> 戰力概況 / Account Overview</legend>
+
+        <label>總戰力 / Total Power <b>*</b>
+          <input type="text" name="total_power" required>
+        </label>
+
+        <label>擊殺數 / Kills
+          <input type="text" name="kills">
+        </label>
+
+        <label>主力兵種 / Main Troop Type
+          <select name="main_troop">
+            <option value="">請選擇 / Select</option>
+            <option>勇士</option>
+            <option>射手</option>
+            <option>騎兵</option>
+          </select>
+        </label>
+
+        <label>瞭望塔等級 / Watchtower Level
+          <select name="watchtower_level">
+            <option value="">請選擇 / Select</option>
+            <option>24</option><option>25</option><option>26</option><option>27</option>
+            <option>28</option><option>29</option><option>30</option>
+            <option>工業1</option><option>工業2</option><option>工業3</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>03</span> 移民意願 / Migration Interest</legend>
+
+        <label>你目前對移民 618 的意願？ <b>*</b>
+          <select name="interest" required>
+            <option value="">請選擇 / Select</option>
+            <option>確定想來</option>
+            <option>高度考慮</option>
+            <option>想先了解</option>
+          </select>
+        </label>
+
+        <label>預計幾個人一起來？
+          <select name="group_size">
+            <option value="">請選擇 / Select</option>
+            <option>自己</option>
+            <option>2–5 人</option>
+            <option>6–10 人</option>
+            <option>10+ 人／整團</option>
+          </select>
+        </label>
+
+        <label>618 伺服器推薦人（選填）
+          <input type="text" name="referrer">
+        </label>
+
+        <label>希望加入的 618 聯盟 / Preferred Alliance
+          <select name="preferred_alliance">
+            <option value="">請選擇 / Select</option>
+            <option>[RZN] Risen</option>
+            <option>[3311] 青丘寨</option>
+            <option>[RoD!] Reign of Dragons</option>
+            <option>[RAW$] War Dominion</option>
+            <option>[UNQ.] UNQUESTIONED</option>
+            <option>[KNT] Knights of Round</option>
+            <option>[WofA] Wolves of Anarchy</option>
+            <option>[S_B] Storm Bringers</option>
+            <option>[RnB] ReBoRN BiO</option>
+            <option>[TCB] VenomousSlayers</option>
+            <option>不限 / No preference</option>
+            <option>尚未決定 / Not sure yet</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>04</span> 活動與適配 / Activity</legend>
+
+        <label>平常活躍時段（填寫伺服器時間）
+          <input type="text" name="active_time" placeholder="例如 / e.g. 12:00–16:00">
+        </label>
+
+        <label>對聯盟／州活動參與程度
+          <select name="activity_level">
+            <option value="">請選擇 / Select</option>
+            <option>積極參與（每個活動都參與）</option>
+            <option>活躍</option>
+            <option>普通</option>
+            <option>偶爾</option>
+            <option>幾乎沒有</option>
+          </select>
+        </label>
+
+        <label>是否曾擔任聯盟管理
+          <select name="management">
+            <option value="">請選擇 / Select</option>
+            <option>R5</option>
+            <option>R4</option>
+            <option>無</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>05</span> 補充 / More</legend>
+
+        <div class="field-label">想了解 618 的哪些事情？</div>
+        <div class="checks">
+          <label><input type="checkbox" name="questions" value="NAP／州規"> NAP／州規</label>
+          <label><input type="checkbox" name="questions" value="各聯盟特色"> 各聯盟特色</label>
+          <label><input type="checkbox" name="questions" value="其他"> 其他</label>
+        </div>
+
+        <label>想補充的話／備註
+          <textarea name="notes" rows="5"></textarea>
+        </label>
+      </fieldset>
+
+      <div class="submit-area">
+        <button class="primary submit-button" id="submit-button" type="submit">Submit application</button>
+        <p>
+          送出後可使用 Player ID 查詢申請進度。<br>
+          請耐心等候專人通知；若有指定聯盟，後續將由該聯盟管理人員聯繫安排面試／審核。
+        </p>
+        <p id="submit-result" class="submit-result"></p>
+      </div>
+
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
+    </form>
+
+    <iframe id="submit-frame" name="submit-frame" hidden></iframe>
+  </main>
+
+  <footer class="site-footer">
+    <span>STATE 618</span><span class="dot">•</span><span>Migration Interest</span>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

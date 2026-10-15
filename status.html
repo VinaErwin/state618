@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211522">
+  <title>STATE 618 | Check Application Status</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="form.css">
+</head>
+<body class="form-page">
+  <header class="form-topbar">
+    <a class="back-link" href="index.html">← STATE 618</a>
+    <div class="form-status"><span class="status-dot"></span> Status checker · preview</div>
+  </header>
+
+  <main class="form-shell">
+    <section class="form-intro">
+      <div class="section-kicker">STATE 618 · MIGRATION</div>
+      <h1>Check Application Status</h1>
+      <p class="zh-title">查詢申請進度</p>
+      <p class="intro">
+        Enter your Player ID to check the latest status of your migration request.
+      </p>
+      <p class="intro zh">輸入 Player ID，即可查看目前的審核進度。</p>
+    </section>
+
+    <section class="status-card">
+      <label>Player ID
+        <input type="text" id="player-id" placeholder="輸入你的 Player ID">
+      </label>
+
+      <button class="primary status-button" id="check-status-button" type="button">
+        Check status
+      </button>
+
+      <p class="status-help">
+        送出申請後，可直接使用 Player ID 查詢進度，無需另外記申請編號。<br>
+        請耐心等候專人通知；若有指定聯盟，後續將由該聯盟管理人員聯繫安排面試／審核。
+      </p>
+    </section>
+
+    <section class="status-preview">
+      <div class="section-kicker">STATUS</div>
+      <h2>Application status</h2>
+
+      <div class="status-result" id="live-status-result" hidden></div>
+
+      <div class="status-legend">
+        <span class="badge received">Received</span>
+        <span class="badge interview">Awaiting Interview</span>
+        <span class="badge reviewing">Under Review</span>
+        <span class="badge approved">Approved</span>
+        <span class="badge waitlist">Waitlist</span>
+        <span class="badge declined">Declined</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>STATE 618</span><span class="dot">•</span><span>Migration Interest</span>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
