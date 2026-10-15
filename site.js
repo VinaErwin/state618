@@ -112,9 +112,10 @@ function setSubmitMessage(text, type = '') {
       row('Player ID', escapeHtml(data.playerId)),
       row('Player', escapeHtml(data.playerName)),
       row('Preferred Alliance', escapeHtml(data.preferredAlliance || '—')),
-      row('Status', '<span class="badge ' + statusClass(data.status) + '">' + escapeHtml(data.status) + '</span>'),
+      row('Status', '<span class="badge ' + statusClass(data.status) + '">' + escapeHtml(statusLabel(data.status)) + '</span>'),
       row('Submitted', escapeHtml(data.submittedAt || '—')),
-      row('Last updated', escapeHtml(data.lastUpdated || '—'))
+      row('Last updated', escapeHtml(data.lastUpdated || '—')),
+      '<div class="status-note">' + escapeHtml(statusMessage(data.status)) + '</div>'
     ].join('');
   }
 
@@ -137,6 +138,30 @@ function setSubmitMessage(text, type = '') {
       'Declined': 'declined'
     };
     return map[status] || 'received';
+  }
+
+  function statusLabel(status) {
+    const map = {
+      'Received': 'Received · 已收到申請',
+      'Awaiting Interview': 'Awaiting Interview · 等候面試',
+      'Under Review': 'Under Review · 審核中',
+      'Approved': 'Approved · 已通過',
+      'Waitlist': 'Waitlist · 候補中',
+      'Declined': 'Declined · 未通過'
+    };
+    return map[status] || status || 'Received';
+  }
+
+  function statusMessage(status) {
+    const map = {
+      'Received': '申請已收到，請耐心等候專人聯繫。',
+      'Awaiting Interview': '目前正等待指定聯盟管理人員聯繫並安排面試，請耐心等候。',
+      'Under Review': '申請正在審核中，請耐心等候專人通知。',
+      'Approved': '申請已通過，請留意後續聯繫與移民安排。',
+      'Waitlist': '目前列入候補名單，請耐心等候後續通知。',
+      'Declined': '本次申請未通過；若有疑問，請聯繫 618 管理人員。'
+    };
+    return map[status] || '請耐心等候專人通知。';
   }
 })();
 

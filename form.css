@@ -291,3 +291,13 @@ textarea {
   height: 1px !important;
   opacity: 0 !important;
 }
+
+.status-note {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-left: 3px solid rgba(200,137,184,.7);
+  background: rgba(200,137,184,.07);
+  color: #ddd6e2;
+  line-height: 1.7;
+  font-size: 14px;
+}
