@@ -1,4 +1,4 @@
-const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyYViR0Yls-HMHmtejmJl8hsJA5PXXC3XS_GmZnM3Qq8fvQptuq-JxQWDXFP6LNInvSng/exec';
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwSZMVKwKpnsWP6gzwRaGSlGANhqId91BYd3kbo0gUqhIDCP-Lw5XrWVSZ1ZZWzrl3b/exec';
 
 const backendReady = WEB_APP_URL.startsWith('https://script.google.com/macros/s/');
 
