@@ -181,6 +181,28 @@ h1 {
   cursor: default;
 }
 
+.secondary-link {
+  display: inline-block;
+  min-width: 210px;
+  padding: 14px 24px;
+  border: 1px solid rgba(200,137,184,.58);
+  border-radius: 4px;
+  background: rgba(26,18,28,.72);
+  color: var(--accent-soft);
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.secondary-link:hover {
+  background: rgba(200,137,184,.14);
+  border-color: rgba(234,208,223,.82);
+  transform: translateY(-1px);
+}
+
 .status {
   color: #c3c8ce;
   font-size: 14px;
@@ -324,7 +346,8 @@ h1 {
     max-width: 360px;
   }
 
-  .primary { width: 100%; }
+  .primary,
+  .secondary-link { width: 100%; }
 
   .status { text-align: center; }
 
